@@ -99,3 +99,6 @@ sequelize db:seed:all
 Untuk list user yang bisa dipakai bisa dilihat di dokumentasi API pada link berikut https://handys05.gitlab.io/elemes-test-apidoc/#api-Home-User
 
 ## URL Aplikasi : http://localhost:4000
+
+## Testing Aplikasi
+Untuk Testing Aplikasi, silahkan import file ELEMES TASK.postman_collection.json pada Postman. Lokasi file nya berada pada folder elemes-task/ELEMES TASK.postman_collection.json
