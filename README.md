@@ -56,18 +56,9 @@ Edit config untuk database pada file config/config.json, isi untuk database deve
     "dialect": "mysql"
   }
 }
-
-```
-## Jalankan migration dan seeder
-```sh
-sequelize db:migrate
-sequelize db:seed:all
 ```
 
-## User
-Untuk list user yang bisa dipakai bisa dilihat di dokumentasi API pada link berikut https://handys05.gitlab.io/elemes-test-apidoc/#api-Home-User
-
-## File Environtment, create file .env pada root folder aplikasi
+## File Environtment, create file .env pada root folder aplikasi dan isi dengan text yang dibawah ini
 ```sh
 NODE_ENV=development
 VERSION_CODE=v1.0
@@ -97,5 +88,14 @@ CHAR=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 CHAR_NUMBER=0123456789
 
 ```
+
+## Jalankan migration dan seeder
+```sh
+sequelize db:migrate
+sequelize db:seed:all
+```
+
+## User
+Untuk list user yang bisa dipakai bisa dilihat di dokumentasi API pada link berikut https://handys05.gitlab.io/elemes-test-apidoc/#api-Home-User
 
 ## URL Aplikasi : http://localhost:4000
