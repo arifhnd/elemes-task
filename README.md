@@ -102,3 +102,6 @@ Untuk list user yang bisa dipakai bisa dilihat di dokumentasi API pada link beri
 
 ## Testing Aplikasi
 Untuk Testing Aplikasi, silahkan import file ELEMES TASK.postman_collection.json pada Postman. Lokasi file nya berada pada root folder aplikasi
+
+## Dokumentasi API
+Link dokumentasi https://handys05.gitlab.io/elemes-test-apidoc
