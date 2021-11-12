@@ -67,4 +67,35 @@ sequelize db:seed:all
 ## User
 Untuk list user yang bisa dipakai bisa dilihat di dokumentasi API pada link berikut https://handys05.gitlab.io/elemes-test-apidoc/#api-Home-User
 
+## File Environtment, create file .env pada root folder aplikasi
+```sh
+NODE_ENV=development
+VERSION_CODE=v1.0
+PORT=4000
+
+# KEY SALT
+SALT=MTglxbNoJCwZarZFFRfQGrlBViZNgkMQ
+KEY_SECRET=AXoEfmAeNOpCKicI
+PASSPHRASE=yCXlPu6MqfsJIEZtcF3oaSpD2Wjedhn7Hiwg5TkOUKR1BAV4Y0N8QzmrLxGvb9
+
+# prefix logger
+LOGGER_REQUEST=REQUEST_
+LOGGER_RESULT=RESULT_
+LOGGER_INFO=INFO_
+LOGGER_WARNING=WARNING_
+LOGGER_ERROR=ERROR_
+
+#MAIL
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USER=
+MAIL_PASSWORD=
+MAIL_FROM=
+
+#CHAR
+CHAR=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+CHAR_NUMBER=0123456789
+
+```
+
 ## URL Aplikasi : http://localhost:4000
