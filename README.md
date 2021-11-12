@@ -101,4 +101,4 @@ Untuk list user yang bisa dipakai bisa dilihat di dokumentasi API pada link beri
 ## URL Aplikasi : http://localhost:4000
 
 ## Testing Aplikasi
-Untuk Testing Aplikasi, silahkan import file ELEMES TASK.postman_collection.json pada Postman. Lokasi file nya berada pada root folder aplikasi ELEMES
+Untuk Testing Aplikasi, silahkan import file ELEMES TASK.postman_collection.json pada Postman. Lokasi file nya berada pada root folder aplikasi
