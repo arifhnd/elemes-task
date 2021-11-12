@@ -1,4 +1,5 @@
 const Model = require("./../models/index")
+const cloudinary = require("cloudinary").v2
 
 module.exports = {
     find: async (column, order, limit, page, keyword, sortBy) => {
@@ -246,12 +247,19 @@ module.exports = {
 
     add: async (req, user_id) => {
         try {
+            cloudinary.config({ 
+                cloud_name: 'ariefhnd', 
+                api_key: '466556898555668', 
+                api_secret: 'mbPm9tF0ia_jMop2xa5XtVq3UJs' 
+            });
+            let imageUrl = await cloudinary.uploader.upload(req.body.image);
+
             let obj = {
                 author: req.body['author'],
                 name: req.body['name'],
                 description: req.body['description'],
                 price: req.body['price'],
-                image_url: req.body['image_url'],
+                image_url: imageUrl.url,
                 createdBy: user_id
             }
             
@@ -263,11 +271,19 @@ module.exports = {
 
     update: async (data, req, user_id) => {
         try {
+            cloudinary.config({ 
+                cloud_name: 'ariefhnd', 
+                api_key: '466556898555668', 
+                api_secret: 'mbPm9tF0ia_jMop2xa5XtVq3UJs' 
+            });
+            let imageUrl = await cloudinary.uploader.upload(req.body.image);
+
             let obj = {
                 author: req.body['author'] ? req.body['author'] : data.author,
                 name: req.body['name'] ? req.body['name'] : data.name,
                 price: req.body['price'] ? req.body['price'] : data.price,
                 description: req.body['description'] ? req.body['description'] : data.description,
+                image_url: req.body['image'] ? imageUrl.url : data.image_url,
                 updatedBy: user_id,
                 updatedAt: new Date()
             }
@@ -287,6 +303,7 @@ module.exports = {
             }
             return await data.update(obj)
         } catch (e) {
+            console.log(e)
             return false;
         }
     }

@@ -175,9 +175,10 @@ module.exports = {
                 response = await Helpers.Response(403, "Forbidden, Only Administrator That Can Access This Feature", new Date().toISOString(), null, null)   
                 return res.status(403).send(response)
             }
-            let data = await CourseDao.delete(req.params.id, user_id)
+            let course = await CourseDao.getById(req.params.id)
+            let data = await CourseDao.delete(course, user_id)
             if(data){
-                response = await Helpers.ResponseWithData(200, "success", new Date().toISOString(), null, data)
+                response = await Helpers.Response(200, "success", new Date().toISOString(), null, null)
             }else{
                 response = await Helpers.Response(500, "failed deleting course", new Date().toISOString(), null, data)                
             }
@@ -224,7 +225,7 @@ module.exports = {
             let data = {
                 total_user: await UserDao.count(null, null, null, null, null),
                 total_course: await CourseDao.count(null, null, null, null, null),
-                total_freeCourse: await CourseDao.countFreeCourse(null, null, null, null, null),
+                total_freeCourse: await CourseDao.countFree(null, null, null, null, null),
             }
             response = await Helpers.ResponseWithData(200, "success", new Date().toISOString(), null, data)
             return res.send(response);
